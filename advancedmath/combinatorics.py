@@ -28,7 +28,7 @@ def arrangement(n, k):
         raise TypeError("Value of 'k' must be a integer number.")
 
     if k > n:
-        raise InvalidPermutationError("Value of 'k' cannot be greater than 'n'.")
+        raise InvalidArrangementError("Value of 'k' cannot be greater than 'n'.")
 
     if k < 0:
         raise ValueError("Value of 'k' must be a non-negative integer.")
