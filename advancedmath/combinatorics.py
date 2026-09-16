@@ -14,6 +14,9 @@ def factorial(n):
 
 
 def permutation(n, k):   
+    if type(n) != int:
+        raise TypeError("Value of 'n' must be a integer number.")
+    
     if n < 0:
         raise ValueError("Value of 'n' must be a non-negative integer.")
     
