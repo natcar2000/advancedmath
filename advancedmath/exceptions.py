@@ -1,0 +1,2 @@
+class InvalidPermutationError(Exception):
+    pass
