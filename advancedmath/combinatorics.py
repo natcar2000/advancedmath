@@ -13,7 +13,10 @@ def factorial(n):
         return n * factorial(n-1)
 
 
-def permutation(n, k):    
+def permutation(n, k):   
+    if n < 0:
+        raise ValueError("Value of 'n' must be a non-negative integer.")
+    
     if type(k) != int:
         raise TypeError("Value of 'k' must be a integer number.")
 
@@ -22,9 +25,8 @@ def permutation(n, k):
 
     if k < 0:
         raise ValueError("Value of 'k' must be a non-negative integer.")
-    
-    fac1 = factorial(n)       
-    fac2 = factorial(n-k)
-    perm = fac1 / fac2
 
-    return int(perm)
+    fac1 = factorial(n)
+    fac2 = factorial(n-k)
+
+    return fac1 // fac2
