@@ -27,4 +27,4 @@ def permutation(n, k):
     fac2 = factorial(n-k)
     perm = fac1 / fac2
 
-    return perm
+    return int(perm)
