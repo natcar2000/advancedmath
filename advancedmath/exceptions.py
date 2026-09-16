@@ -1,2 +1,2 @@
-class InvalidPermutationError(Exception):
+class InvalidArrangementError(Exception):
     pass
