@@ -1,4 +1,4 @@
-from .exceptions import InvalidPermutationError
+from .exceptions import InvalidArrangementError
 
 
 def factorial(n):
