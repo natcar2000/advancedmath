@@ -13,7 +13,11 @@ def factorial(n):
         return n * factorial(n-1)
 
 
-def permutation(n, k):   
+def permutation(n):
+    return factorial(n)
+
+
+def arrangement(n, k):   
     if type(n) != int:
         raise TypeError("Value of 'n' must be a integer number.")
     
