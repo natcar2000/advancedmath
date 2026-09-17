@@ -35,6 +35,9 @@ def quadratic_roots(a, b, c):
     valida_coeficiente(a)
 
     discriminant = calculate_discriminant(a, b, c)
+
+    if discriminant < 0:
+        return "Negative discriminant. Function has not real roots."
     
     square_root = calculate_square_root(discriminant)
     
@@ -54,10 +57,7 @@ def calculate_discriminant(a, b, c):
 def calculate_square_root(discriminant):
     valida_valores(discriminant)
 
-    if discriminant < 0:
-        return "Negative discriminant. Function has not real roots."
-
-    elif discriminant == 0:
+    if discriminant == 0:
         return 0
 
     else:
