@@ -38,6 +38,17 @@ def calculate_discriminant(a, b, c):
 
 
 def calculate_square_root(discriminant):
-    for number in range(0, discriminant + 1):
-        if number ** 2 == discriminant:
-            return number
+    valida_valores(discriminant)
+
+    if discriminant < 0:
+        return "Negative discriminant"
+
+    elif discriminant == 0:
+        return 0
+
+    else:
+        guess = number
+        for value in range(20):
+            guess = (guess + value / guess) / 2
+
+        return guess
