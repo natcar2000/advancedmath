@@ -1,10 +1,17 @@
+PI = 3.141592653589793
+
 class Shape:
     def __init__(self, measures):
-        if type(measures) != int:
-            raise TypeError("Measures must be an integer.")
+        self.validate_measure(measures)
+        self.measures = measures
 
-        if measures < 3:
-            raise ValueError("A polygon must have at least 3 measures.")
+    @staticmethod
+    def validate_measure(value):
+        if type(value) not in (int, float):
+            raise TypeError("Measure must have an integer or float value.")
+
+        if value <= 0:
+            raise ValueError("Measure must have a positive value.")
             
         self.measures = measures
 
@@ -19,11 +26,8 @@ class Rectangle(Shape):
     def __init__(self, width, height):
         super().__init__(4)
 
-        if type(width) not in (int, float) or type(height) not in (int, float):
-            raise TypeError("Measures must be integer or float values.")
-        
-        if width <= 0 or height <= 0:
-            raise ValueError("Measures must have positive values.")
+        self.validate_measure(width)
+        self.validade_measure(height)
         
         self.width = width
         self.height = height
@@ -33,3 +37,21 @@ class Rectangle(Shape):
         
     def perimeter(self):
         return 2 * (self.width + self.height)
+
+
+class Circumference(Shape):
+    def __init__(self, radius):
+        super().__init__(1)
+
+        self.validade_measure(radius)
+        
+        self.radius = radius
+
+    def area(self):
+        return PI * (self.radius ** 2) 
+
+    def diameter(self):
+        return 2 * self.radius
+    
+    def circumference_length(self):
+        return self.diameter() * PI
