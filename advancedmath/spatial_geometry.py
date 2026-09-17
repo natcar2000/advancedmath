@@ -1,9 +1,9 @@
-from plan_geometry import Shape
+from plan_geometry import PI, Shape
 
 
 class Prism(Shape):
     def __init__(self, area, height):
-        super().__init__(0)
+        super().__init__(2)
       
         self.validate_measure(area)
         self.validate_measure(height)
@@ -17,7 +17,7 @@ class Prism(Shape):
 
 class Cobblestone(Shape):
     def __init__(self, a, b, c):
-        super().__init__(0)
+        super().__init__(6)
 
         self.validate_measure(a)
         self.validate_measure(b)
@@ -47,3 +47,19 @@ class Cylinder(Shape):
         self.radius = radius
         self.height = height
 
+    def volume(self):
+        return PI * (self.radius ** 2) * self.height
+
+
+class Pyramid(Shape):
+    def __init__(self, area, height):
+        super().__init__(1)
+
+        self.validate_measure(area)
+        self.validate_measure(height)
+
+        self.area = area
+        self.height = height
+
+    def volume(self):
+        return (self.area * self.height) / 3
