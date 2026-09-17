@@ -92,7 +92,7 @@ def main_logarithmic_function(base, x,medium=None, lower=None, upper=None, preci
         raise ValueError("Value of x must be greater than 0.")
     elif x == 1:
         return 0
-    else:
+    elif x > 1:
         if x % 1 == 0:
             return logarithmic_function_1(base, x, medium=None, lower=None, upper=None, precision=1e-10)
         return logarithmic_function_2(base, x, medium=None, lower=None, upper=None, precision=1e-10)
