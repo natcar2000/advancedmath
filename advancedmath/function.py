@@ -57,9 +57,6 @@ def calculate_discriminant(a, b, c):
 def calculate_square_root(discriminant):
     validate_values(discriminant)
 
-    if discriminant == 0:
-        return 0
-
     if discriminant < 0:
         raise ValueError("Cannot calculate the square root of a negative value.")
 
