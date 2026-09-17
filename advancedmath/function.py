@@ -65,3 +65,13 @@ def calculate_square_root(discriminant):
         guess = (guess + discriminant / guess) / 2
 
     return guess
+
+
+def exponential_function(start=None, a, x):
+    valida_valores(a, x)
+    valida_coeficiente(a)
+
+    if start == None:
+        return a ** x
+    else:
+        return start * (a ** x)
