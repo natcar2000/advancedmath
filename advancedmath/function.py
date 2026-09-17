@@ -55,7 +55,7 @@ def calculate_square_root(discriminant):
     valida_valores(discriminant)
 
     if discriminant < 0:
-        return -1
+        return "Negative discriminant. Function has not real roots."
 
     elif discriminant == 0:
         return 0
