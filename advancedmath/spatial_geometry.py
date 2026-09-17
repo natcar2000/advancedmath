@@ -60,6 +60,20 @@ class Pyramid(Shape):
 
         self.area = area
         self.height = height
-
+        
     def volume(self):
         return (self.area * self.height) / 3
+
+
+class Cone(Shape):
+    def __init__(self, radius, height):
+        super().__init__(1)
+
+        self.validate_measure(radius)
+        self.validate_measure(height)
+
+        self.radius = radius
+        self.height = height
+
+    def volume(self):
+        return (PI * (self.radius ** 2) * self.height) / 3 
