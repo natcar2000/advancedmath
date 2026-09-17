@@ -1,4 +1,4 @@
-class Polygon:
+class Shape:
     def __init__(self, measures):
         if type(measures) != int:
             raise TypeError("Measures must be an integer.")
@@ -15,7 +15,7 @@ class Polygon:
         raise NotImplementedError
 
 
-class Rectangle(Polygon):
+class Rectangle(Shape):
     def __init__(self, width, height):
         super().__init__(4)
 
