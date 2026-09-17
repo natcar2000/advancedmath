@@ -47,8 +47,8 @@ def calculate_square_root(discriminant):
         return 0
 
     else:
-        guess = number
-        for value in range(20):
-            guess = (guess + value / guess) / 2
+        guess = discriminant
+        for _ in range(20):
+            guess = (guess + discriminant / guess) / 2
 
         return guess
