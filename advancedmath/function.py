@@ -67,7 +67,7 @@ def calculate_square_root(discriminant):
     return guess
 
 
-def exponential_function(start=None, a, x):
+def exponential_function(a, x, start=None):
     valida_valores(a, x)
     valida_coeficiente(a)
 
