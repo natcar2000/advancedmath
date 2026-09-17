@@ -37,7 +37,7 @@ def quadratic_roots(a, b, c):
     discriminant = calculate_discriminant(a, b, c)
 
     if discriminant < 0:
-        return "Negative discriminant. Function has not real roots."
+        return "Negative discriminant. Function has no real roots."
     
     square_root = calculate_square_root(discriminant)
     
