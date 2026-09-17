@@ -39,23 +39,21 @@ class Rectangle(Shape):
 
 class Square(Rectangle):
     def __init__(self, side):
-        super().__Init__(1)
-
-        self.validate_measure(side)
+        super().__init__(side, side)
         self.side = side
 
-    def area():
-        return side ** 2
+    def area(self):
+        return self.side ** 2
 
-    def perimeter():
-        return 4 * side
+    def perimeter(self):
+        return 4 * self.side
 
 
 class Circumference(Shape):
     def __init__(self, radius):
         super().__init__(1)
 
-        self.validade_measure(radius)        
+        self.validate_measure(radius)        
         self.radius = radius
 
     def area(self):
