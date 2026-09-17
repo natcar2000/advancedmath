@@ -114,7 +114,7 @@ def logarithmic_function_1(base, x, medium=None, lower=None, upper=None, precisi
 
 def logarithmic_function_2(base, x, medium=None, lower=None, upper=None, precision=1e-10):    
     validate_values(base, x)
-    validade_coefficient(base)
+    validate_coefficient(base)
     
     integer = int(x)
     
@@ -141,7 +141,7 @@ def logarithmic_function_2(base, x, medium=None, lower=None, upper=None, precisi
 
 def logarithmic_function_3(base, x, medium=None, lower=None, upper=None, precision=1e-10):    
     validate_values(base, x)
-    validade_coefficient(base)
+    validate_coefficient(base)
 
     result = logarithmic_function_2(base, 1/x)
     return -result
