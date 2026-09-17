@@ -106,9 +106,13 @@ def main_logarithmic_function(base, x, medium=None, lower=None, upper=None, prec
     
 
 def logarithmic_function_1(base, x, medium=None, lower=None, upper=None, precision=1e-10):
-    for value in range(x):
-        if base ** value <= x:
-            integer = value
+    value = 0
+    power = 1
+
+    while power <= x:
+        integer = value
+        value += 1
+        power *= base
             
     if base ** integer == x:
         return integer
