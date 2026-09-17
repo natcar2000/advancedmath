@@ -30,6 +30,19 @@ def quadratic_function(a, b, c, x):
     return (a * (x ** 2)) + (b * x) + c
 
 
+def quadratic_roots(a, b, c):
+    valida_valores(a, b, c)
+    valida_coeficiente(a)
+
+    discriminant = calculate_discriminant(a, b, c)
+    
+    square_root = calculate_square_root(discriminant)
+    
+    x1 = (b + square_root) / (2 * a)
+    x2 = (-b + square_root) / (2 * a)
+
+    return x1, x2
+
 def calculate_discriminant(a, b, c):
     valida_valores(a, b, c)
     valida_coeficiente(a)
@@ -41,7 +54,7 @@ def calculate_square_root(discriminant):
     valida_valores(discriminant)
 
     if discriminant < 0:
-        return "Negative discriminant"
+        return -1
 
     elif discriminant == 0:
         return 0
