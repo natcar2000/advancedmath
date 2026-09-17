@@ -77,3 +77,15 @@ class Cone(Shape):
 
     def volume(self):
         return (PI * (self.radius ** 2) * self.height) / 3 
+
+
+class Sphere(Shape):
+    def __init__(self, radius):
+        super().__init__(1)
+
+        self.validade_measure(radius)
+
+        self.radius = radius
+
+    def volume(self):
+        return 4/3 * PI * (self.radius ** 3)
