@@ -27,6 +27,9 @@ class Cobblestone(Shape):
         self.b = b
         self.c = c
 
+    def volume(self):
+        return self.a * self.b * self.c
+
 
 class Cube(Cobblestone):
     def __init__(self, measure):
