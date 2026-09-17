@@ -38,7 +38,6 @@ def calculate_discriminant(a, b, c):
 
 
 def calculate_square_root(discriminant):
-    def square_root(discriminant):
     for number in range(0, discriminant + 1):
         if number ** 2 == discriminant:
             return number
