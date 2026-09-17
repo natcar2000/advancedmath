@@ -1,12 +1,9 @@
-from .exceptions import InvalidArrangementError
-
-
 def factorial(n):
     if type(n) != int:
-        raise TypeError("Value of 'n' must be a integer number.")
+        raise TypeError("Value must be a integer number.")
         
     if n < 0:
-        raise ValueError("Value of 'n' must be a non-negative integer.")        
+        raise ValueError("Value must be a non-negative integer.")        
     elif n == 0 or n == 1: 
         return 1        
     else:
@@ -17,23 +14,17 @@ def permutation(n):
     return factorial(n)
 
 
+def circular_permutation(n):
+    return factorial(n-1)
+
+
 def arrangement(n, k):   
-    if type(n) != int:
-        raise TypeError("Value of 'n' must be a integer number.")
-    
-    if n < 0:
-        raise ValueError("Value of 'n' must be a non-negative integer.")
-    
-    if type(k) != int:
-        raise TypeError("Value of 'k' must be a integer number.")
+    return factorial(n) // factorial(n-k)
 
-    if k > n:
-        raise InvalidArrangementError("Value of 'k' cannot be greater than 'n'.")
 
-    if k < 0:
-        raise ValueError("Value of 'k' must be a non-negative integer.")
+def combination(n, k):
+    return factorial(n) // (factorial(k) * factorial(n-k))
 
-    fac1 = factorial(n)
-    fac2 = factorial(n-k)
 
-    return fac1 // fac2
+def combination_with_repetition(n, k):
+    return combination(n+k-1, k)
