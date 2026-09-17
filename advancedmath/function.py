@@ -95,7 +95,7 @@ def main_logarithmic_function(base, x,medium=None, lower=None, upper=None, preci
     else:
         if x % 1 == 0:
             return logarithmic_function_1(base, x, medium=None, lower=None, upper=None, precision=1e-10)
-        logarithmic_function_2(base, x, medium=None, lower=None, upper=None, precision=1e-10)
+        return logarithmic_function_2(base, x, medium=None, lower=None, upper=None, precision=1e-10)
 
     return logarithmic_function_2(base, x, medium=None, lower=None, upper=None, precision=1e-10)
     
