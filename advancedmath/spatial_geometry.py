@@ -83,7 +83,7 @@ class Sphere(Shape):
     def __init__(self, radius):
         super().__init__(1)
 
-        self.validade_measure(radius)
+        self.validate_measure(radius)
 
         self.radius = radius
 
