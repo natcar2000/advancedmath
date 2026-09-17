@@ -25,7 +25,7 @@ class Rectangle(Shape):
         super().__init__(4)
 
         self.validate_measure(width)
-        self.validade_measure(height)
+        self.validate_measure(height)
         
         self.width = width
         self.height = height
