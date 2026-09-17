@@ -27,9 +27,6 @@ class Cobblestone(Shape):
         self.b = b
         self.c = c
 
-    def volume(self):
-        return self.a * self.b * self.c
-
 
 class Cube(Cobblestone):
     def __init__(self, measure):
@@ -38,3 +35,15 @@ class Cube(Cobblestone):
 
     def volume(self):
         return self.measure ** 3    
+
+
+class Cylinder(Shape):    
+    def __init__(self, radius, height):
+        super().__init__(2)
+
+        self.validate_measure(radius)
+        self.validate_measure(height)
+
+        self.radius = radius
+        self.height = height
+
