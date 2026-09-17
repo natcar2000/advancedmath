@@ -149,8 +149,3 @@ def logarithmic_function_2(base, x, medium=None, lower=None, upper=None, precisi
         return medium
         
     return logarithmic_function_2(base, x, medium, lower, upper, precision)
-
-
-def logarithmic_function_3(base, x, medium=None, lower=None, upper=None, precision=1e-10):   
-    result = logarithmic_function_2(base, 1/x)
-    return -result
