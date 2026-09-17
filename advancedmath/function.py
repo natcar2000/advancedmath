@@ -43,6 +43,7 @@ def quadratic_roots(a, b, c):
 
     return x1, x2
 
+
 def calculate_discriminant(a, b, c):
     valida_valores(a, b, c)
     valida_coeficiente(a)
