@@ -110,3 +110,27 @@ def logarithmic_function_1(base, x, medium=None, lower=None, upper=None, precisi
         return medium
         
     return logarithmic_function_1(base, x, medium, lower, upper, precision)
+
+
+def logarithmic_function_2(base, x, medium=None, lower=None, upper=None, precision=1e-10):    
+    integer = int(x)
+    
+    for value in range(integer):
+        if base ** value <= x:
+            v = value
+    
+    if lower is None and upper is None:
+        lower = v
+        upper = v+1
+    
+    medium = (lower+upper) / 2
+
+    if base ** medium < x:
+        lower = medium
+    else:
+        upper = medium
+        
+    if abs((base ** medium) - x) < precision:
+        return medium
+        
+    return logarithmic_function_2(base, x, medium, lower, upper, precision)
