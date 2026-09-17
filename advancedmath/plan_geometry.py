@@ -12,8 +12,6 @@ class Shape:
 
         if value <= 0:
             raise ValueError("Measure must have a positive value.")
-            
-        self.measures = measures
 
     def area(self):
         raise NotImplementedError
@@ -37,6 +35,20 @@ class Rectangle(Shape):
         
     def perimeter(self):
         return 2 * (self.width + self.height)
+
+
+class Square(Rectangle):
+    def __init__(self, side):
+        super().__Init__(1)
+
+        self.validate_measure(side)
+        self.side = side
+
+    def area():
+        return side ** 2
+
+    def perimeter():
+        return 4 * side
 
 
 class Circumference(Shape):
