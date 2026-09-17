@@ -134,14 +134,14 @@ class Circle(Shape):
     def __init__(self, circumference_radius):
         super().__init__(1)
 
-        self.validate_measure(radius)        
+        self.validate_measure(circumference_radius)
         self.circumference_radius = circumference_radius
 
     def area(self):
-        return PI * (self.radius ** 2) 
+        return PI * (self.circumference_radius ** 2)
 
     def circumference_diameter(self):
-        return 2 * self.radius
-    
+        return 2 * self.circumference_radius
+
     def circumference_length(self):
         return self.circumference_diameter() * PI
