@@ -87,7 +87,6 @@ def exponential_function(a, x, start=None):
 
 
 def logarithmic_function(base, x, medium=None, lower=None, upper=None, precision=1e-10):
-
     value = 0
     power = 1
 
@@ -128,8 +127,8 @@ def logarithmic_function(base, x, medium=None, lower=None, upper=None, precision
     if abs((base ** medium) - x) < precision:
         return medium
 
-    return logarithmic_function(base, x, medium, lower, upper, precisio)
+    return logarithmic_function(base, x, medium, lower, upper, precision)
 
 
 def natural_logarithmic(x, precision=1e-10):
-    return logarithmic_function(EULER, x, precision)
+    return logarithmic_function(EULER, x, precision=precision)
