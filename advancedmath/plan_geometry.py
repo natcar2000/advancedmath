@@ -43,8 +43,7 @@ class Circumference(Shape):
     def __init__(self, radius):
         super().__init__(1)
 
-        self.validade_measure(radius)
-        
+        self.validade_measure(radius)        
         self.radius = radius
 
     def area(self):
