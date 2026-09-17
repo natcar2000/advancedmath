@@ -128,9 +128,7 @@ def logarithmic_function(base, x, medium=None, lower=None, upper=None, precision
     if abs((base ** medium) - x) < precision:
         return medium
 
-    return logarithmic_function(
-        base, x, medium, lower, upper, precision
-    )
+    return logarithmic_function(base, x, medium, lower, upper, precisio)
 
 
 def natural_logarithmic(x, precision=1e-10):
