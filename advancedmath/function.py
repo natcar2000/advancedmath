@@ -1,38 +1,40 @@
-def valida_valores(*valores):
-    for valor in valores:
+EULER = 2.718281828459045
+
+def validate_values(*values):
+    for valor in values:
         if type(valor) not in (int, float):
             raise TypeError("Numbers must have integer or float values.")
 
 
-def valida_coeficiente(coeficiente):
+def validate_coefficient(coefficient):
     if coeficiente == 0:
         raise ValueError("Coefficient 'a' must not be 0.")
     
 
 def linear_function(a, b, x):    
-    valida_valores(a, b, x)
-    valida_coeficiente(a)
+    validate_values(a, b, x)
+    validate_coefficient(a)
     
     return (a * x) + b
 
 
 def linear_root(a, b):
-    valida_valores(a, b)
-    valida_coeficiente(a)
+    valida_values(a, b)
+    valida_coefficient(a)
 
     return -b / a
 
 
 def quadratic_function(a, b, c, x):
-    valida_valores(a, b, c, x)
-    valida_coeficiente(a)
+    validate_values(a, b, c, x)
+    validate_coefficient(a)
 
     return (a * (x ** 2)) + (b * x) + c
 
 
 def quadratic_roots(a, b, c):
-    valida_valores(a, b, c)
-    valida_coeficiente(a)
+    validate_values(a, b, c)
+    validate_coefficient(a)
 
     discriminant = calculate_discriminant(a, b, c)
 
@@ -48,14 +50,14 @@ def quadratic_roots(a, b, c):
 
 
 def calculate_discriminant(a, b, c):
-    valida_valores(a, b, c)
-    valida_coeficiente(a)
+    validate_values(a, b, c)
+    validate_coefficient(a)
 
     return (b ** 2) - (4 * a * c)
 
 
 def calculate_square_root(discriminant):
-    valida_valores(discriminant)
+    validate_values(discriminant)
 
     if discriminant == 0:
         return 0
@@ -68,8 +70,8 @@ def calculate_square_root(discriminant):
 
 
 def exponential_function(a, x, start=None):
-    valida_valores(a, x)
-    valida_coeficiente(a)
+    validate_values(a, x)
+    validate_coefficient(a)
 
     if a == 1:
         raise ValueError("Value of 'a' cannot be 1.")
@@ -77,9 +79,20 @@ def exponential_function(a, x, start=None):
     if start is None:
         return a ** x
 
-    valida_valores(start)       
+    validate_values(start)       
     return start * (a ** x)
 
 
 def logarithmic_function(base, x):
-    
+    validate_values(base, x)
+    validate_coefficient(a)
+
+    if a == 1:
+        raise ValueError("Value of 'a' cannot be 1.")
+
+    for value in range(x):
+        if base ** value < x:
+            y = value
+
+    return y
+
