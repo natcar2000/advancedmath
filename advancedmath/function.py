@@ -5,7 +5,7 @@ def validate_values(*values):
 
 
 def validate_coefficient(coefficient):
-    if coeficiente == 0:
+    if coefficient == 0:
         raise ValueError("Coefficient 'a' must not be 0.")
     
 
@@ -17,8 +17,8 @@ def linear_function(a, b, x):
 
 
 def linear_root(a, b):
-    valida_values(a, b)
-    valida_coefficient(a)
+    validate_values(a, b)
+    validate_coefficient(a)
 
     return -b / a
 
