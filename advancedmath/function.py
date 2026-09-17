@@ -81,7 +81,7 @@ def exponential_function(a, x, start=None):
     return start * (a ** x)
 
 
-def main_logarithmic_function(base, x,medium=None, lower=None, upper=None, precision=1e-10)
+def main_logarithmic_function(base, x,medium=None, lower=None, upper=None, precision=1e-10):
     validate_values(base, x)
     validate_coefficient(base)
 
@@ -97,7 +97,7 @@ def main_logarithmic_function(base, x,medium=None, lower=None, upper=None, preci
             return logarithmic_function_1(base, x, medium=None, lower=None, upper=None, precision=1e-10)
         return logarithmic_function_2(base, x, medium=None, lower=None, upper=None, precision=1e-10)
 
-    return logarithmic_function_2(base, x, medium=None, lower=None, upper=None, precision=1e-10)
+    return logarithmic_function_3(base, x, medium=None, lower=None, upper=None, precision=1e-10)
     
 
 def logarithmic_function_1(base, x, medium=None, lower=None, upper=None, precision=1e-10):
@@ -155,31 +155,3 @@ def logarithmic_function_2(base, x, medium=None, lower=None, upper=None, precisi
 def logarithmic_function_3(base, x, medium=None, lower=None, upper=None, precision=1e-10):   
     result = logarithmic_function_2(base, 1/x)
     return -result
-    
-    
-def logarithmic_function_1(base, x, medium=None, lower=None, upper=None, precision=1e-10):
-    if base == 1:
-        raise ValueError("Value of base cannot be 1.")
-
-    for value in range(x):
-        if base ** value <= x:
-            integer = value
-            
-    if base ** integer == x:
-        return integer
-
-    if lower is None and upper is None:
-        lower = integer
-        upper = integer+1
-
-    medium = (lower+upper) / 2
-    
-    if base ** medium < x:
-        lower = medium
-    else:
-        upper = medium
-        
-    if abs((base ** medium) - x) < precision:
-        return medium
-        
-    return logarithmic_function_1(base, x, medium, lower, upper, precision)
