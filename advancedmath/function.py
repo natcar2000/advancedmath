@@ -93,7 +93,7 @@ def main_logarithmic_function(base, x,medium=None, lower=None, upper=None, preci
     elif x == 1:
         return 0
     elif x > 1:
-        if x % 1 == 0:
+        if type(x) == int:
             return logarithmic_function_1(base, x, medium=None, lower=None, upper=None, precision=1e-10)
         return logarithmic_function_2(base, x, medium=None, lower=None, upper=None, precision=1e-10)
 
