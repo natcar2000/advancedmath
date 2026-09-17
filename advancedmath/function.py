@@ -85,8 +85,26 @@ def exponential_function(a, x, start=None):
 
 
 def logarithmic_function(base, x, medium=None, lower=None, upper=None, precision=1e-10):
+    validate_values(base, x)
+    validate_coefficient(base)
+    
     value = 0
     power = 1
+    
+    if base < 0:
+        raise ValueError("Base cannot be smaller than 0.")
+
+    if base == 1:
+        raise ValueError("Base cannot be 1.")
+        
+    if x <= 0:
+        raise ValueError("Value of x must be greater than 0.")
+
+    elif x == 1:
+        return 0
+        
+    elif 0 < x < 1:
+        return -logarithmic_function(base, 1 / x, precision=precision)
 
     while power <= x:
         integer = value
@@ -109,5 +127,5 @@ def logarithmic_function(base, x, medium=None, lower=None, upper=None, precision
 
     if abs((base ** medium) - x) < precision:
         return medium
-
+        
     return logarithmic_function(base, x, medium, lower, upper, precision)
