@@ -84,28 +84,7 @@ def exponential_function(a, x, start=None):
     return start * (a ** x)
 
 
-def main_logarithmic_function(base, x, medium=None, lower=None, upper=None, precision=1e-10):
-    validate_values(base, x)
-
-    if base <= 0:
-        raise ValueError("Value of base must be greater than 0.")
-
-    if base == 1:
-        raise ValueError("Value of base cannot be 1.")
-        
-    if x <= 0:
-        raise ValueError("Value of x must be greater than 0.")
-    elif x == 1:
-        return 0
-    elif x > 1:
-        if type(x) == int:
-            return logarithmic_function_1(base, x)
-        return logarithmic_function_2(base, x)
-
-    return -main_logarithmic_function(1/base, x)
-    
-
-def logarithmic_function_1(base, x, medium=None, lower=None, upper=None, precision=1e-10):
+def logarithmic_function(base, x, medium=None, lower=None, upper=None, precision=1e-10):
     value = 0
     power = 1
 
@@ -113,47 +92,22 @@ def logarithmic_function_1(base, x, medium=None, lower=None, upper=None, precisi
         integer = value
         value += 1
         power *= base
-            
+
     if base ** integer == x:
         return integer
 
     if lower is None and upper is None:
         lower = integer
-        upper = integer+1
+        upper = integer + 1
 
-    medium = (lower+upper) / 2
-    
-    if base ** medium < x:
-        lower = medium
-    else:
-        upper = medium
-        
-    if abs((base ** medium) - x) < precision:
-        return medium
-        
-    return logarithmic_function_1(base, x, medium, lower, upper, precision)
-
-
-def logarithmic_function_2(base, x, medium=None, lower=None, upper=None, precision=1e-10):    
-    value = 0
-    power = 1
-
-    while power <= x:
-        v = value
-        value += 1
-        power *= base
-    
-    if lower is None and upper is None:
-        lower = v
-        upper = v+1
-    
-    medium = (lower+upper) / 2
+    medium = (lower + upper) / 2
 
     if base ** medium < x:
         lower = medium
     else:
         upper = medium
+
     if abs((base ** medium) - x) < precision:
         return medium
-        
-    return logarithmic_function_2(base, x, medium, lower, upper, precision)
+
+    return logarithmic_function(base, x, medium, lower, upper, precision)
