@@ -71,7 +71,14 @@ def exponential_function(a, x, start=None):
     valida_valores(a, x)
     valida_coeficiente(a)
 
-    if start == None:
+    if a == 1:
+        return "Value of 'a' cannot be 1."
+
+    if x == 0:
+        return 1
+
+    if start is None:
         return a ** x
     else:
+        valida_valores(start)       
         return start * (a ** x)
