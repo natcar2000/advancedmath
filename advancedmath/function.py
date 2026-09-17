@@ -79,3 +79,7 @@ def exponential_function(a, x, start=None):
 
     valida_valores(start)       
     return start * (a ** x)
+
+
+def logarithmic_function(base, x):
+    
