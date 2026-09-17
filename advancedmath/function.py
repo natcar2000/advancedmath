@@ -38,8 +38,8 @@ def quadratic_roots(a, b, c):
     
     square_root = calculate_square_root(discriminant)
     
-    x1 = (b + square_root) / (2 * a)
-    x2 = (-b + square_root) / (2 * a)
+    x1 = (-b + square_root) / (2 * a)
+    x2 = (-b - square_root) / (2 * a)
 
     return x1, x2
 
