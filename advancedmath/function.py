@@ -93,16 +93,13 @@ def logarithmic_function(base, x, medium=None, lower=None, upper=None, precision
     
     if base < 0:
         raise ValueError("Base cannot be smaller than 0.")
-
-    if base == 1:
+    elif base == 1:
         raise ValueError("Base cannot be 1.")
         
     if x <= 0:
         raise ValueError("Value of x must be greater than 0.")
-
     elif x == 1:
         return 0
-        
     elif 0 < x < 1:
         return -logarithmic_function(base, 1 / x, precision=precision)
 
