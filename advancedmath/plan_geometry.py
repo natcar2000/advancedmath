@@ -49,6 +49,20 @@ class Square(Rectangle):
         return 4 * self.side
 
 
+class Parallelogram(Shape):
+    def __init__(self, base, height):
+        super().__init__(4)
+        
+        self.validate_measure(base)
+        self.validate_measure(height)
+        
+        self.base = base
+        self.height = height
+
+    def area(self):
+        return self.base * self.height
+
+
 class Circumference(Shape):
     def __init__(self, radius):
         super().__init__(1)
