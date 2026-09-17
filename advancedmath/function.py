@@ -135,11 +135,13 @@ def logarithmic_function_1(base, x, medium=None, lower=None, upper=None, precisi
 
 
 def logarithmic_function_2(base, x, medium=None, lower=None, upper=None, precision=1e-10):    
-    integer = int(x)
-    
-    for value in range(integer):
-        if base ** value <= x:
-            v = value
+    value = 0
+    power = 1
+
+    while power <= x:
+        v = value
+        value += 1
+        power *= base
     
     if lower is None and upper is None:
         lower = v
