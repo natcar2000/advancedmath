@@ -1,5 +1,3 @@
-EULER = 2.718281828459045
-
 def validate_values(*values):
     for valor in values:
         if type(valor) not in (int, float):
