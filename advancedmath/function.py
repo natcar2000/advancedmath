@@ -60,6 +60,12 @@ def calculate_square_root(discriminant):
     if discriminant == 0:
         return 0
 
+    if discriminant < 0:
+        raise ValueError("Cannot calculate the square root of a negative value.")
+
+    if discriminant == 0:
+        return 0
+    
     guess = discriminant
     for _ in range(20):
         guess = (guess + discriminant / guess) / 2
@@ -144,7 +150,6 @@ def logarithmic_function_2(base, x, medium=None, lower=None, upper=None, precisi
         lower = medium
     else:
         upper = medium
-        
     if abs((base ** medium) - x) < precision:
         return medium
         
