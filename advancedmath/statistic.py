@@ -16,7 +16,6 @@ def arithmetic_mean(*values):
     total = 0
     
     for value in values:
-        validate_values(value)
         total += value
     
     return total / len(values)
