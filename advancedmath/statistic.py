@@ -1,6 +1,8 @@
 from function import calculate_square_root
 
 
+def validate_values(*values):
+
 def arithmetic_mean(*values):
     total = 0
     
