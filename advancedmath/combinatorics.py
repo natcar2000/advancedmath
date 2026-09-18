@@ -16,7 +16,9 @@ def validate_values(n, k=None):
 
     if k is not None:
         if type(k) != int:
-            raise TypeError("Value(s) must be a integer number.")    
+            raise TypeError("Value(s) must be a integer number.")   
+        if k < 0:
+            raise ValueError("Value(s) must be a non-negative integer.")
         if k > n:
             raise ValueError("Value(s) of k must be smaller than or equal to n.")
         
