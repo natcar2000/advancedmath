@@ -13,7 +13,7 @@ def validate_values(n, k):
         raise ValueError("Value(s) must be a non-negative integer.")
     
     if k > n:
-        raise ValueError("Value(s) of k must be smaller than n.")
+        raise ValueError("Value(s) of k must be smaller than or equal to n.")
         
     return True
 
@@ -56,6 +56,6 @@ def combination_with_repetition(n, k):
     if n == 0:
         if k == 0:
             return 1
-        raise ValueError("n must be greater than 0 when k is greater than 0.")
+        raise ValueError("Value of n must be greater than 0 when k is greater than 0.")
 
     return combination(n+k-1, k)
