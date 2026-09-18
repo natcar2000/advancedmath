@@ -97,3 +97,16 @@ def arithmetic_variance(*values):
     return variance / len(values)
 
 
+def weighted_variance(weights, *values):
+    validate_values(*weights)
+    validate_values(*values)
+    
+    variance = 0
+    
+    mean = weighted_mean(weights, *values)    
+    
+    for index in range(len(values)):
+        var = (values[index] - mean) ** 2
+        variance += weights[index] * var
+    
+    return variance / sum(weights)
