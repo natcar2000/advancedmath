@@ -53,5 +53,9 @@ def combination(n, k):
 
 
 def combination_with_repetition(n, k):
-    validate_values(n, k)
+    if n == 0:
+        if k == 0:
+            return 1
+        raise ValueError("n must be greater than 0 when k is greater than 0.")
+
     return combination(n+k-1, k)
