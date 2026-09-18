@@ -1,5 +1,4 @@
 from function import calculate_square_root
-from function import validate_values
 
 
 def arithmetic_mean(*values):
@@ -26,5 +25,30 @@ def weighted_mean(weights, *values):
     
     if total == 0:
         raise ValueError("The total of weights must be different of zero.")
+
+
+def mode(*values):
+    if len(values) == 0:
+        raise ValueError("At least one value is required.")
+    
+    times = []
+    elements = []
+    modes = []
+    
+    
+    for value in values:
+        if value not in elements:
+            occurrences = values.count(value)
+            times.append(occurrences)
+            elements.append(value)
+            
+    
+    for i in range(len(times)):
+        if times[i] == max(times):
+            modes.append(elements[i])
         
+    if len(values) > 1 and max(times) == 1:
+        return "No mode."
+        
+    return modes
     return numerator / total
