@@ -36,7 +36,7 @@ def permutation_with_repetition(n, *repetitions):
         validate_values(n, repetition)
         fac = factorial(repetition)
         denominator *= fac
-        soma += repetition
+        sum += repetition
 
     if soma > n:
         raise ValueError("The sum of the repetitions can't be greater than n.")
