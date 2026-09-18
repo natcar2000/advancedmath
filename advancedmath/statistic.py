@@ -2,8 +2,13 @@ from function import calculate_square_root
 
 
 def validate_values(*values):
+    if len(values) == 0:
+        raise ValueError("At least one value is required.")
 
-def arithmetic_mean(*values):
+
+def arithmetic_mean(*values):    
+    validate_values(values)
+    
     total = 0
     
     for value in values:
@@ -14,6 +19,9 @@ def arithmetic_mean(*values):
 
 
 def weighted_mean(weights, *values):
+    validate_values(weights)
+    validate_values(values)
+ 
     if len(weights) != len(values):
         raise ValueError("Weights and values data must have the same length.")
     
@@ -30,14 +38,12 @@ def weighted_mean(weights, *values):
 
 
 def mode(*values):
-    if len(values) == 0:
-        raise ValueError("At least one value is required.")
+    validate_values(values)
     
     times = []
     elements = []
     modes = []
-    
-    
+       
     for value in values:
         if value not in elements:
             occurrences = values.count(value)
@@ -54,3 +60,17 @@ def mode(*values):
         
     return modes
     return numerator / total
+
+
+def median(*values):
+    validate_values(values)
+    
+    values = sorted(values)
+    
+    if len(values) % 2 == 1:
+        return values[len(values) // 2]
+    
+    factor1 = values[len(values) // 2]
+    factor2 = values[len(values) // 2 - 1]
+    
+    return (factor1 + factor2) / 2
