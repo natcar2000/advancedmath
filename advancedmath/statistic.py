@@ -11,7 +11,7 @@ def validate_values(*values):
 
 
 def arithmetic_mean(*values):    
-    validate_values(values)
+    validate_values(*values)
     
     total = 0
     
@@ -24,7 +24,7 @@ def arithmetic_mean(*values):
 
 def weighted_mean(weights, *values):
     validate_values(weights)
-    validate_values(values)
+    validate_values(*values)
  
     if len(weights) != len(values):
         raise ValueError("Weights and values data must have the same length.")
@@ -40,9 +40,11 @@ def weighted_mean(weights, *values):
     if total == 0:
         raise ValueError("The total of weights must be different of zero.")
 
+    return numerator / total
+
 
 def mode(*values):
-    validate_values(values)
+    validate_values(*values)
     
     times = []
     elements = []
@@ -53,8 +55,7 @@ def mode(*values):
             occurrences = values.count(value)
             times.append(occurrences)
             elements.append(value)
-            
-    
+                
     for i in range(len(times)):
         if times[i] == max(times):
             modes.append(elements[i])
@@ -63,11 +64,10 @@ def mode(*values):
         return "No mode."
         
     return modes
-    return numerator / total
 
 
 def median(*values):
-    validate_values(values)
+    validate_values(*values)
     
     values = sorted(values)
     
@@ -78,3 +78,8 @@ def median(*values):
     factor2 = values[len(values) // 2 - 1]
     
     return (factor1 + factor2) / 2
+
+
+def amplitude(*values):
+    validate_values(*values)
+    return max(values) - min(values)
