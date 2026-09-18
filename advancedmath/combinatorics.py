@@ -32,7 +32,7 @@ def permutation(n):
 
 def permutation_with_repetition(n, *repetitions):
     denominator = 1
-    soma = 0
+    total_repetitions = 0
     
     for repetition in repetitions:
         validate_values(n, repetition)
