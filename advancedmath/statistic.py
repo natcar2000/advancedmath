@@ -5,6 +5,10 @@ def validate_values(*values):
     if len(values) == 0:
         raise ValueError("At least one value is required.")
 
+    for value in values:
+        if type(value) not in (int, float):
+            raise TypeError("Value(s) must be a number.")
+
 
 def arithmetic_mean(*values):    
     validate_values(values)
