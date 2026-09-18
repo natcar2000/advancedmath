@@ -1,16 +1,17 @@
 def factorial(n):
-    if type(n) != int:
-        raise TypeError("Value must be a integer number.")
-        
-    if n < 0:
-        raise ValueError("Value must be a non-negative integer.")        
-    elif n == 0 or n == 1: 
+    if n == 0 or n == 1: 
         return 1        
     else:
         return n * factorial(n-1)
 
 
 def validate_values(n, k):
+    if type(n) != int:
+        raise TypeError("Value must be a integer number.")
+        
+    if n < 0:
+        raise ValueError("Value must be a non-negative integer.")
+    
     if k > n:
         raise ValueError("Value of k must be smaller than n.")
         
@@ -26,7 +27,7 @@ def permutation_with_repetition(n, *repetitions):
     soma = 0
     
     for repetition in repetitions:
-        validate_values(n, k)
+        validate_values(n, repetition)
         fac = factorial(repetition)
         denominator *= fac
         soma += repetition
@@ -42,12 +43,12 @@ def circular_permutation(n):
 
 
 def arrangement(n, k):   
-    validate_subset(n, k)
+    validate_values(n, k)
     return factorial(n) // factorial(n-k)
 
 
 def combination(n, k):
-    validate_subset(n, k)
+    validate_values(n, k)
     return factorial(n) // (factorial(k) * factorial(n-k))
 
 
