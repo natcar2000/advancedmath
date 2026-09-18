@@ -6,14 +6,14 @@ def factorial(n):
 
 
 def validate_values(n, k):
-    if type(n) != int:
-        raise TypeError("Value must be a integer number.")
+    if type(n) != int or type(k) != int:
+        raise TypeError("Value(s) must be a integer number.")
         
-    if n < 0:
-        raise ValueError("Value must be a non-negative integer.")
+    if n < 0 or k < 0:
+        raise ValueError("Value(s) must be a non-negative integer.")
     
     if k > n:
-        raise ValueError("Value of k must be smaller than n.")
+        raise ValueError("Value(s) of k must be smaller than n.")
         
     return True
 
@@ -53,5 +53,5 @@ def combination(n, k):
 
 
 def combination_with_repetition(n, k):
-    validate_subset(n, k)
+    validate_values(n, k)
     return combination(n+k-1, k)
