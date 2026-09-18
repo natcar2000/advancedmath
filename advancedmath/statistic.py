@@ -22,7 +22,7 @@ def arithmetic_mean(*values):
 
 
 def weighted_mean(weights, *values):
-    validate_values(weights)
+    validate_values(*weights)
     validate_values(*values)
  
     if len(weights) != len(values):
@@ -110,3 +110,13 @@ def weighted_variance(weights, *values):
         variance += weights[index] * var
     
     return variance / sum(weights)
+
+
+def arithmetic_standard_deviation(*values):
+    variance = arithmetic_variance(*values)
+    return calculate_square_root(variance)
+    
+
+def weighted_standard_deviation(weights, *values):
+    variance = weighted_variance(weights, *values)
+    return calculate_square_root(variance)
