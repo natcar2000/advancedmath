@@ -82,3 +82,18 @@ def median(*values):
 def amplitude(*values):
     validate_values(*values)
     return max(values) - min(values)
+
+
+def arithmetic_variance(*values):
+    validate_values(*values)
+    
+    variance = 0
+    mean = arithmetic_mean(*values)    
+    
+    for value in values:
+        var = (value - mean) ** 2
+        variance += var
+     
+    return variance / len(values)
+
+
