@@ -1,9 +1,9 @@
 def factorial(n):
-    validate_values(n, k=1)
+    validate_values(n, n-1)
     
     if n == 0 or n == 1: 
         return 1        
-    else:
+    else:, n-1
         return n * factorial(n-1)
 
 
@@ -21,7 +21,7 @@ def validate_values(n, k):
 
 
 def permutation(n):
-    validate_values(n, k=1)
+    validate_values(n, n-1)
     return factorial(n)
 
 
@@ -45,7 +45,7 @@ def circular_permutation(n):
     if n == 0:
         raise ValueError("Value of n must be greater than 0.")
         
-    validate_values(n, k=1)
+    validate_values(n, n-1)
     
     return factorial(n-1)
 
