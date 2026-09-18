@@ -53,6 +53,8 @@ def combination(n, k):
 
 
 def combination_with_repetition(n, k):
+    validate_values(n, k)
+    
     if n == 0:
         if k == 0:
             return 1
